@@ -1,0 +1,271 @@
+:root {
+  --panel-bg: #ffffff;
+  --panel-border: #e2e8f0;
+  --panel-text: #111827;
+  --accent: #2563eb;
+  --paper-bg: #ffffff;
+  --paper-shadow: rgba(15, 23, 42, 0.08);
+  --canvas-bg: #f3f4f6;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas-bg);
+  color: var(--panel-text);
+  font-family: 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft YaHei', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  gap: 20px;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.control-panel {
+  width: 360px;
+  padding: 18px 16px 28px;
+  overflow-y: auto;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: var(--panel-bg);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.control-panel h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.section {
+  padding: 12px 12px 14px;
+  margin-bottom: 12px;
+  background: #ffffff;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+}
+
+.section h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--panel-text);
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.field.inline {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.field-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.field input[type="file"] {
+  padding: 6px 0;
+}
+
+.file-input {
+  text-align: center;
+  border: 1px dashed #cbd5f5;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+}
+
+.file-input::file-selector-button {
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.file-name {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.editor-textarea {
+  width: 100%;
+  min-height: 160px;
+  padding: 10px 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  font-family: 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft YaHei', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  resize: vertical;
+  background: #ffffff;
+}
+
+.field select,
+.field input[type="text"],
+.field input[type="color"] {
+  padding: 6px 8px;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.field input[type="range"] {
+  width: 100%;
+}
+
+.section button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.section button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.card {
+  padding: 10px 10px 12px;
+  background: #ffffff;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.row input[type="text"] {
+  flex: 1;
+  min-width: 120px;
+}
+
+.row label.checkbox {
+  white-space: nowrap;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.button-grid button {
+  padding: 10px 8px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.button-grid button:hover {
+  background: #1d4ed8;
+}
+
+.render-panel {
+  flex: 1;
+  padding: 18px 20px 28px;
+  overflow-y: auto;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.script-render-area {
+  background: var(--paper-bg);
+  padding: 26mm 24mm;
+  width: min(760px, 100%);
+  min-height: 200px;
+  margin: 0 auto 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px var(--paper-shadow);
+  outline: none;
+}
+
+.render-block {
+  margin-bottom: 12px;
+}
+
+.empty-state {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.name-line {
+  letter-spacing: 0.8px;
+}
+
+.dialogue-line,
+.narration-line {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 980px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .control-panel {
+    width: 100%;
+  }
+
+  .render-panel {
+    padding: 20px 16px 40px;
+  }
+
+  .script-render-area {
+    width: 100%;
+    padding: 24mm 18mm;
+  }
+
+  .field-row {
+    flex-direction: column;
+  }
+}
